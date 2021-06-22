@@ -16,7 +16,7 @@ export const BodyHeader = ({ activeBody, changeBody }) => {
   return (
     <>
       <div
-        className="d-flex justify-content-between w-100 m-4 "
+        className="d-flex justify-content-between w-100 my-4 "
         style={{ borderBottom: "1px solid #cccbcd", height: "35px" }}
       >
         <div className="d-flex">
@@ -44,11 +44,11 @@ export const BodyHeader = ({ activeBody, changeBody }) => {
             <div className="mx-1">Approval Matrix</div>
           </div>
         </div>
-        <div className="d-flex align-items-center mx-4">
+        <div className="d-flex align-items-center" style={{marginRight: '4%'}}>
           <div className="mx-2" style={{ color: "#7c7b7d" }}>
             <SyncOutlinedIcon />
           </div>
-          <div style={{ fontSize: "80%" }}>Last Synced 15 mins ago</div>
+          <div style={{ fontSize: "80%",}}>Last Synced 15 mins ago</div>
         </div>
       </div>
     </>

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Header } from "./Components/Header";
+import { Sidebar } from "./Components/Sidebar";
+import { Main } from "./Components/Main";
+import { useState } from "react";
 function App() {
+  const [activeSidebar, setActiveSidebar] = useState("Access");
+  const [activeBody, setActiveBody] = useState("Permissons");
+  const handleSidebar = (currentSidebar) => {
+    setActiveSidebar(currentSidebar);
+  };
+  const handleBody = (currentBody) => {
+    setActiveBody(currentBody);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="d-flex">
+        <Sidebar activeSidebar={activeSidebar} changeSidebar={handleSidebar} />
+        <Main activeBody={activeBody} changeBody={handleBody} />
+      </div>
     </div>
   );
 }
